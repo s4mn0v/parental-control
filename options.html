@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Configuración de Control Parental</title>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+      .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: auto;
+      }
+      h1,
+      h2 {
+        color: #333;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+      }
+      input[type="text"],
+      input[type="password"] {
+        width: calc(100% - 24px);
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      button {
+        background-color: #5cb85c;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 5px;
+        font-size: 1em;
+        margin-top: 5px; /* Added for spacing */
+      }
+      button:hover {
+        background-color: #4cae4c;
+      }
+      #deleteUrlButton {
+        background-color: #d9534f;
+      }
+      #deleteUrlButton:hover {
+        background-color: #c9302c;
+      }
+      #tempUnblockButton {
+        /* New button style */
+        background-color: #f0ad4e;
+      }
+      #tempUnblockButton:hover {
+        background-color: #ec971f;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        background-color: #e9e9e9;
+        margin-bottom: 8px;
+        padding: 10px 15px;
+        border-radius: 4px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .url-text {
+        flex-grow: 1;
+        margin-right: 10px;
+        word-break: break-all;
+      }
+      .url-actions button {
+        margin-left: 5px;
+        padding: 6px 10px;
+        font-size: 0.9em;
+      }
+      #message {
+        margin-top: 15px;
+        padding: 10px;
+        border-radius: 4px;
+        text-align: center;
+      }
+      .success {
+        background-color: #dff0d8;
+        color: #3c763d;
+        border: 1px solid #d6e9c6;
+      }
+      .error {
+        background-color: #f2dede;
+        color: #a94442;
+        border: 1px solid #ebccd1;
+      }
+      .info {
+        background-color: #d9edf7;
+        color: #31708f;
+        border: 1px solid #bce8f1;
+      }
+      .section {
+        margin-bottom: 20px;
+      }
+      .password-prompt {
+        margin-top: 10px;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #f9f9f9;
+      }
+      .password-prompt input[type="password"] {
+        width: calc(100% - 110px);
+        margin-right: 10px;
+      }
+      .password-prompt button {
+        width: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Configuración de Control Parental</h1>
+
+      <div class="section">
+        <h2>URLs Bloqueadas Actualmente</h2>
+        <ul id="blockedUrlList"></ul>
+        <div id="passwordPromptContainer" style="display: none">
+          <h3>Ingresar Contraseña</h3>
+          <input
+            type="password"
+            id="promptPasswordInput"
+            placeholder="Contraseña"
+          />
+          <button id="promptConfirmButton">Confirmar</button>
+          <button id="promptCancelButton">Cancelar</button>
+          <div id="promptMessage" style="margin-top: 10px"></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Añadir Nueva URL para Bloquear</h2>
+        <input
+          type="text"
+          id="newUrl"
+          placeholder="Ej: youtube.com o https://www.youtube.com"
+        />
+        <button id="addUrlButton">Añadir URL</button>
+      </div>
+
+      <div id="message"></div>
+    </div>
+
+    <script src="options.js"></script>
+  </body>
+</html>
